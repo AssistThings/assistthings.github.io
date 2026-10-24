@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AssistThings</title>
+<meta name="description" content="Projeto de pesquisa entre universidades que cria tecnologia assistiva aberta com Inteligência Artificial e Internet das Coisas.">
+<style>
+  :root {
+    --bg: #fbfaf7; --surface: #ffffff; --text: #1b1d21; --muted: #555b66;
+    --line: #e3e0d8; --accent: #0b5cad; --accent-ink: #ffffff; --chip: #eef3fa;
+    --focus: #f2a900;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121417; --surface: #1b1e23; --text: #eceef2; --muted: #a6adb9;
+      --line: #2c3139; --accent: #6fb0ff; --accent-ink: #0b1220; --chip: #1f2a3a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 112.5%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 1rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--accent); color: var(--accent-ink); padding: .6rem 1rem; }
+  .skip:focus { left: 1rem; top: 1rem; z-index: 10; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  header.top { border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; flex-wrap: wrap; }
+  .brand { font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: -.01em; }
+  .brand span { color: var(--accent); }
+  nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; flex-wrap: wrap; }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--text); text-decoration: underline; }
+
+  .hero { padding: 4.5rem 0 3.5rem; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.12; margin: 0 0 1rem; letter-spacing: -.02em; max-width: 18ch; }
+  .hero p { font-size: 1.15rem; color: var(--muted); max-width: 60ch; margin: 0 0 1.8rem; }
+  .btns { display: flex; gap: .8rem; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: .75rem 1.2rem; border-radius: 8px; font-weight: 600; text-decoration: none; border: 2px solid var(--accent); }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); }
+  .btn.ghost { color: var(--accent); }
+
+  section { padding: 3rem 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 1.6rem; margin: 0 0 .4rem; letter-spacing: -.01em; }
+  .lead { color: var(--muted); margin: 0 0 2rem; max-width: 65ch; }
+
+  .project { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.6rem; margin-bottom: 1.5rem; }
+  .project h3 { margin: 0 0 .3rem; font-size: 1.3rem; }
+  .project > p { margin: 0 0 1.2rem; color: var(--muted); }
+  .modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .8rem; margin: 0 0 1.4rem; padding: 0; list-style: none; }
+  .modes li { background: var(--chip); border-radius: 10px; padding: .8rem 1rem; }
+  .modes strong { display: block; }
+  .modes span { color: var(--muted); font-size: .9rem; }
+  .repos { list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem; }
+  .repos li { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: .7rem 0; border-top: 1px solid var(--line); }
+  .repos .meta { color: var(--muted); font-size: .9rem; }
+  .tag { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; padding: .1rem .5rem; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); margin-left: .4rem; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+  .grid h3 { margin: 0 0 .3rem; font-size: 1.05rem; }
+  .grid p { margin: 0; color: var(--muted); }
+  ol.steps { padding-left: 1.2rem; max-width: 65ch; }
+  ol.steps li { margin-bottom: .5rem; }
+  footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Assist<span>Things</span></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#principios">Princípios</a></li>
+        <li><a href="#parceiros">Parceiros</a></li>
+        <li><a href="#contribuir">Contribuir</a></li>
+        <li><a href="https://github.com/AssistThings">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <div class="wrap hero">
+    <h1>Tecnologia assistiva aberta, feita com pesquisa.</h1>
+    <p>AssistThings reúne diversas universidades para criar tecnologia assistiva aberta para pessoas com deficiência, usando Inteligência Artificial e Internet das Coisas com hardware barato e processamento no próprio aparelho.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projetos">Ver os projetos</a>
+      <a class="btn ghost" href="https://github.com/AssistThings">Código no GitHub</a>
+    </div>
+  </div>
+
+  <section id="projetos" aria-labelledby="h-projetos">
+    <div class="wrap">
+      <h2 id="h-projetos">Projetos</h2>
+      <p class="lead">Dois protótipos em andamento, com código, hardware e documentação abertos.</p>
+
+      <article class="project" aria-labelledby="h-glasses">
+        <h3 id="h-glasses">Smart Glasses: óculos inteligentes para pessoas cegas</h3>
+        <p>Óculos com câmera USB ligados ao celular. A visão computacional roda no próprio aparelho, sem nuvem, e o resultado é falado em voz alta. Já funciona em Android com hardware real.</p>
+        <ul class="modes">
+          <li><strong>Ler texto</strong><span>OCR on-device com leitura estável</span></li>
+          <li><strong>Apontar</strong><span>Lê a linha indicada pelo dedo</span></li>
+          <li><strong>Objetos</strong><span>Diz o que é e onde está</span></li>
+          <li><strong>Cores</strong><span>Nomeia a cor e diz quando não tem certeza</span></li>
+          <li><strong>Rostos</strong><span>Reconhece pessoas cadastradas, sem guardar fotos</span></li>
+        </ul>
+        <ul class="repos">
+          <li><a href="https://github.com/AssistThings/smartglasses-app">smartglasses-app</a><span class="meta">Flutter · Kotlin · C (libuvc) · ML Kit · MediaPipe</span></li>
+          <li><a href="https://github.com/AssistThings/smartglasses-ios">smartglasses-ios</a><span class="meta">SwiftUI · Apple Vision · OCR com histórico local</span></li>
+        </ul>
+      </article>
+
+      <article class="project" aria-labelledby="h-bengala">
+        <h3 id="h-bengala">Bengala IoT: bengala inteligente</h3>
+        <p>Dois sensores ultrassônicos detectam obstáculos e avisam com vibração mais forte quanto mais perto estiver o obstáculo. Um botão de emergência envia SMS.</p>
+        <ul class="repos">
+          <li><span><a href="https://github.com/AssistThings/bengalaiot-esp32">bengalaiot-esp32</a> · <a href="https://wokwi.com/projects/360982537270744065">simular no Wokwi</a></span><span class="meta">C++ · ESP32 · BLE · vibração</span></li>
+          <li><a href="https://github.com/AssistThings/bengalaiot-dragonboard-410c">bengalaiot-dragonboard-410c</a><span class="meta">Python · ultrassom · buzzer · SMS</span></li>
+          <li><a href="https://github.com/AssistThings/bengalaiot-3d-print">bengalaiot-3d-print</a><span class="meta">Peças STL para impressão 3D</span></li>
+          <li><span><a href="https://github.com/AssistThings/bengalaiot-raspberry-pi">bengalaiot-raspberry-pi</a><span class="tag">em construção</span></span><span class="meta">Raspberry Pi</span></li>
+          <li><span><a href="https://github.com/AssistThings/bengalaiot-android-app">bengalaiot-android-app</a><span class="tag">em construção</span></span><span class="meta">App companheiro</span></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="principios" aria-labelledby="h-principios">
+    <div class="wrap">
+      <h2 id="h-principios">Princípios</h2>
+      <p class="lead">O que guia as decisões de cada protótipo.</p>
+      <div class="grid">
+        <div><h3>Aberto</h3><p>Código, hardware e documentação livres para reproduzir e adaptar.</p></div>
+        <div><h3>Privado</h3><p>O processamento acontece no aparelho. Imagens e rostos não vão para a nuvem.</p></div>
+        <div><h3>Acessível</h3><p>Componentes baratos e fáceis de achar: ESP32, câmeras UVC, impressão 3D.</p></div>
+        <div><h3>Centrado nas pessoas</h3><p>As funções vêm de necessidades reais de quem usa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="parceiros" aria-labelledby="h-parceiros">
+    <div class="wrap">
+      <h2 id="h-parceiros">Instituições parceiras</h2>
+      <p class="lead">Pesquisa feita em rede, entre universidades.</p>
+      <ul>
+        <li>UFSCar, DEPS, Campus Sorocaba</li>
+        <li><em>Demais universidades e laboratórios parceiros</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contribuir" aria-labelledby="h-contribuir">
+    <div class="wrap">
+      <h2 id="h-contribuir">Como contribuir</h2>
+      <ol class="steps">
+        <li>Escolha um repositório e leia o README e a pasta <code>docs/</code>.</li>
+        <li>Abra uma <em>issue</em> para relatar um problema ou propor uma ideia.</li>
+        <li>Mande um <em>pull request</em>. Testes e acessibilidade (TalkBack, VoiceOver) contam muito.</li>
+      </ol>
+      <p>Pesquisadores, estudantes e pessoas com deficiência que queiram testar os protótipos são muito bem-vindos.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">AssistThings · tecnologia assistiva aberta · <a href="https://github.com/AssistThings">github.com/AssistThings</a></div>
+</footer>
+</body>
+</html>
