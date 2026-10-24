@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AssistThings</title>
+<meta name="description" content="A research project across universities building open assistive technology with Artificial Intelligence and the Internet of Things.">
+<link rel="stylesheet" href="/style.css">
+<link rel="alternate" hreflang="pt-BR" href="https://assistthings.github.io/">
+<link rel="alternate" hreflang="es" href="https://assistthings.github.io/es/">
+<link rel="alternate" hreflang="en" href="https://assistthings.github.io/en/">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/">Assist<span>Things</span></a>
+    <div class="top-right">
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contribute">Contribute</a></li>
+        <li><a href="https://github.com/AssistThings">GitHub</a></li>
+      </ul>
+    </nav>
+    <ul class="lang" aria-label="Language">
+      <li><a href="/" hreflang="pt-BR" lang="pt-BR">PT</a></li>
+      <li><a href="/es/" hreflang="es" lang="es">ES</a></li>
+      <li><a href="/en/" hreflang="en" lang="en" aria-current="page">EN</a></li>
+    </ul>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap hero">
+    <h1>Open assistive technology, built through research.</h1>
+    <p>AssistThings brings together several universities to build open assistive technology for people with disabilities, using Artificial Intelligence and the Internet of Things with affordable hardware and on-device processing.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See the projects</a>
+      <a class="btn ghost" href="https://github.com/AssistThings">Code on GitHub</a>
+    </div>
+  </div>
+
+  <section id="projects" aria-labelledby="h-projects">
+    <div class="wrap">
+      <h2 id="h-projects">Projects</h2>
+      <p class="lead">Two prototypes in progress, with open code, hardware and documentation.</p>
+
+      <article class="project" aria-labelledby="h-glasses">
+        <h3 id="h-glasses">Smart Glasses: smart glasses for people with visual impairments</h3>
+        <p>Glasses with a USB camera connected to a phone. Computer vision runs on the device itself, with no cloud, and results are spoken aloud. Already working on Android with real hardware.</p>
+        <ul class="modes">
+          <li><strong>Read text</strong><span>On-device OCR with stable reading</span></li>
+          <li><strong>Point</strong><span>Reads the line your finger points to</span></li>
+          <li><strong>Objects</strong><span>Says what it is and where it is</span></li>
+          <li><strong>Colors</strong><span>Names the color and says when it is unsure</span></li>
+          <li><strong>Faces</strong><span>Recognizes registered people without storing photos</span></li>
+        </ul>
+        <ul class="repos">
+          <li><a href="https://github.com/AssistThings/smartglasses-app">smartglasses-app</a><span class="meta">Flutter · Kotlin · C (libuvc) · ML Kit · MediaPipe</span></li>
+          <li><a href="https://github.com/AssistThings/smartglasses-ios">smartglasses-ios</a><span class="meta">SwiftUI · Apple Vision · OCR with local history</span></li>
+        </ul>
+      </article>
+
+      <article class="project" aria-labelledby="h-cane">
+        <h3 id="h-cane">Bengala IoT: smart cane</h3>
+        <p>Two ultrasonic sensors detect obstacles and warn with a vibration that grows stronger as the obstacle gets closer. An emergency button sends an SMS.</p>
+        <ul class="repos">
+          <li><span><a href="https://github.com/AssistThings/bengalaiot-esp32">bengalaiot-esp32</a> · <a href="https://wokwi.com/projects/360982537270744065">simulate on Wokwi</a></span><span class="meta">C++ · ESP32 · BLE · vibration</span></li>
+          <li><a href="https://github.com/AssistThings/bengalaiot-dragonboard-410c">bengalaiot-dragonboard-410c</a><span class="meta">Python · ultrasound · buzzer · SMS</span></li>
+          <li><a href="https://github.com/AssistThings/bengalaiot-3d-print">bengalaiot-3d-print</a><span class="meta">STL parts for 3D printing</span></li>
+          <li><span><a href="https://github.com/AssistThings/bengalaiot-raspberry-pi">bengalaiot-raspberry-pi</a><span class="tag">in progress</span></span><span class="meta">Raspberry Pi</span></li>
+          <li><span><a href="https://github.com/AssistThings/bengalaiot-android-app">bengalaiot-android-app</a><span class="tag">in progress</span></span><span class="meta">Companion app</span></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="principles" aria-labelledby="h-principles">
+    <div class="wrap">
+      <h2 id="h-principles">Principles</h2>
+      <p class="lead">What guides the decisions behind every prototype.</p>
+      <div class="grid">
+        <div><h3>Open</h3><p>Code, hardware and documentation are free to reproduce and adapt.</p></div>
+        <div><h3>Privacy</h3><p>Processing happens on the device. Images and faces never go to the cloud.</p></div>
+        <div><h3>Affordable</h3><p>Cheap, easy-to-find parts: ESP32, UVC cameras, 3D printing.</p></div>
+        <div><h3>People-centered</h3><p>Features come from the real needs of the people who use them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners" aria-labelledby="h-partners">
+    <div class="wrap">
+      <h2 id="h-partners">Partner institutions</h2>
+      <p class="lead">Research done as a network of universities.</p>
+      <p>Partner universities will be announced soon.</p>
+    </div>
+  </section>
+
+  <section id="contribute" aria-labelledby="h-contribute">
+    <div class="wrap">
+      <h2 id="h-contribute">How to contribute</h2>
+      <ol class="steps">
+        <li>Pick a repository and read its README and <code>docs/</code> folder.</li>
+        <li>Open an <em>issue</em> to report a problem or suggest an idea.</li>
+        <li>Send a <em>pull request</em>. Tests and accessibility (TalkBack, VoiceOver) matter a lot.</li>
+      </ol>
+      <p>Researchers, students and people with disabilities who want to try the prototypes are very welcome.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">AssistThings · open assistive technology · <a href="https://github.com/AssistThings">github.com/AssistThings</a></div>
+</footer>
+</body>
+</html>
