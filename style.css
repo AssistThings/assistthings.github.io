@@ -23,7 +23,7 @@ a { color: var(--accent); text-underline-offset: 3px; }
 header.top { border-bottom: 1px solid var(--line); }
 header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; flex-wrap: wrap; }
 .brand { display: inline-flex; align-items: center; font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: -.01em; }
-.brand span { color: var(--accent); }
+.brand .name span { color: var(--accent); }
 nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; flex-wrap: wrap; }
 nav a { color: var(--muted); text-decoration: none; }
 nav a:hover { color: var(--text); text-decoration: underline; }
