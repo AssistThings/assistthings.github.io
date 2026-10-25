@@ -63,4 +63,10 @@ footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--m
 .lang a[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .top-right { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
 .brand img { border-radius: 50%; display: block; margin-right: .6rem; }
-.hero-logo { display: block; width: 112px; height: 112px; border-radius: 50%; margin: 0 0 1.5rem; border: 3px solid var(--line); }
+.hero-head { display: flex; align-items: center; gap: 1.5rem; margin: 0 0 1rem; }
+.hero-head h1 { margin: 0; }
+.hero-logo { flex: none; display: block; width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--line); }
+@media (max-width: 520px) {
+  .hero-head { gap: 1rem; }
+  .hero-logo { width: 72px; height: 72px; }
+}
